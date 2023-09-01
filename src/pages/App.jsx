@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import logo from "../assets/devflix.png";
+import logo from "../assets/top.png";
 import searchIcon from "../assets/search.svg";
 import "https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js";
 import { useState } from "react";
@@ -39,19 +39,36 @@ const App = () => {
       <div className="app">
         <img src={logo} alt="logo devflix"></img>
       </div>
+      
       <div className="search">
+      <div className="menu">
+  <button className="menu-icon">
+    <div className="bar"></div>
+    <div className="bar"></div>
+    <div className="bar"></div>
+  </button>
+</div>
         <input
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
           onKeyDown={handleKeyPress}
           placeholder="pesquise aqui "
         />
+        
+   
         <img
           src={searchIcon}
           alt="Icone de pesquisa"
           onClick={() => searchMovies(searchTerm)}
         />
+        
+        <div className="menu">
+  
+</div>
+    
       </div>
+
+      
       {movies?.length > 0 ? (
         <div className="container">
           {movies.map((movie) => (

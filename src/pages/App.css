@@ -74,7 +74,6 @@ body {
 
   color: #f9d3b4;
 }
-
 .container{
   width: 100%;
   margin-top: 3rem;
@@ -82,6 +81,50 @@ body {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+}
+.menu {
+  display: flex;
+  align-items: center;
+}
+
+.menu-icon {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 24px;
+  padding: 0;
+}
+
+.bar {
+  margin: 3%;
+  width: 30px;
+  height: 3px;
+  background-color: #fff;
+  margin-left: -30%;
+  
+}
+
+.menu-items {
+  list-style: none;
+  display: none;
+}
+
+.menu-items li {
+  margin: 10px 0;
+}
+
+.menu-items a {
+  text-decoration: none;
+  color: #fff;
+}
+
+/* Exibindo o menu quando o botão é clicado */
+.menu-active .menu-items {
+  display: block;
 }
 
 @media screen and
@@ -115,6 +158,7 @@ body {
   .movie{
     width: 100%;
     margin: 1rem;
+    
   }
   
 }
