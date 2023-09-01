@@ -6,7 +6,7 @@ import { useState } from "react";
 
 import "./App.css";
 import MovieCard from "../components/movieCard/movieCard";
-import Footer from "../components/footer/footer";
+// import Footer from "../components/footer/footer";
 
 const App = () => {
   const [searchTerm, setSearchTerm] = useState("");
