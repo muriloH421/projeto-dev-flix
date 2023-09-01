@@ -13,6 +13,7 @@ const App = () => {
   const [movies, setMovies] = useState([]);
   const apiKey = "eb1a598e";
   const apiUrl = `https://omdbapi.com/?apikey=${apiKey}`;
+  const [isMenu, setIsMenu] = useState(true);
 
   useEffect(() => {
     searchMovies("Batman");
@@ -33,46 +34,71 @@ const App = () => {
   // fetch(apiUrl)
   //   .then((Response) => Response.json())
   //   .then((data) => console.log(data));
-
+  const toggleMenu = () => {
+    setIsMenu(!isMenu);
+  };
   return (
     <div id="app">
       <div className="app">
         <img src={logo} alt="logo devflix"></img>
       </div>
-      
+
       <div className="search">
-      <div className="menu">
-  <button className="menu-icon">
-    <div className="bar"></div>
-    <div className="bar"></div>
-    <div className="bar"></div>
-  </button>
-</div>
+        <div className="menu">
+          <button className="menu-icon" onClick={toggleMenu}>
+            {isMenu && <menu click={toggleMenu} />}
+            <div className="bar"></div>
+            <div className="bar"></div>
+            <div className="bar"></div>
+          </button>
+          <div className="modal">
+            {isMenu && (
+              <>
+                <div className="fundoMenu" onClick={toggleMenu}></div>
+                <ul>
+                  <li>
+                    <a href="#">Terror</a>
+                  </li>
+                  <li>
+                    <a href="#">Romance</a>
+                  </li>
+                  <li>
+                    <a href="#">Comédia</a>
+                  </li>
+                  <li>
+                    <a href="#">Ação</a>
+                  </li>
+                  <li>
+                    <a href="#">Auspense</a>
+                  </li>
+                  <li>
+                    <a href="#">Animação</a>
+                  </li>
+                </ul>
+              </>
+            )}
+          </div>
+        </div>
         <input
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
           onKeyDown={handleKeyPress}
           placeholder="pesquise aqui "
         />
-        
-   
+
         <img
           src={searchIcon}
           alt="Icone de pesquisa"
           onClick={() => searchMovies(searchTerm)}
         />
-        
-        <div className="menu">
-  
-</div>
-    
+
+        <div className="menu"></div>
       </div>
 
-      
       {movies?.length > 0 ? (
         <div className="container">
           {movies.map((movie) => (
-            <MovieCard key ={movie.imdbID}  movies={movie}/>
+            <MovieCard key={movie.imdbID} movies={movie} />
           ))}
         </div>
       ) : (

@@ -8,11 +8,11 @@
   margin: 0;
   border: 0;
   box-sizing: border-box;
-  font-family: var(--font-raleway);
 }
-  
+
 body {
-  background-color: #212421;
+  font-family: var(--font-raleway);
+  background-color: #232222;
 }
 #app {
   padding: 4em;
@@ -26,6 +26,7 @@ body {
   max-width: 100%;
   overflow: hidden;
 }
+
 
 
 .logo img {
@@ -103,7 +104,7 @@ body {
   margin: 3%;
   width: 30px;
   height: 3px;
-  background-color: #fff;
+  background-color: #ffffff;
   margin-left: -30%;
   
 }
@@ -112,14 +113,41 @@ body {
   list-style: none;
   display: none;
 }
-
-.menu-items li {
-  margin: 10px 0;
+.fundoMenu{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
-.menu-items a {
+.modal li {
+  margin: 10px 0;
+}
+.modal a {
   text-decoration: none;
-  color: #fff;
+  color: #fe0202;
+}
+.menu{
+  z-index: 1000;
+}
+.modal ul{
+  position: absolute;
+  top: 25em;
+  left: 2em;
+  border-radius: 1em;
+  background: #121212;
+  width: 15em;
+  height: 18em; 
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.modal ul li{
+  list-style: none;
+
 }
 
 /* Exibindo o menu quando o botão é clicado */
